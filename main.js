@@ -39,7 +39,7 @@ class BlockChain {
                  console.log('currentBlock broken');
                  return false;
              }
-                 if(currentBlock.previousHash !== previousBlock.hash) {
+                 if(currentBlock.previousHash !== previousBlock.hash){
                      console.log('previousblock broken');
                     return false;
              }
