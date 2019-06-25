@@ -38,6 +38,9 @@ class BlockChain {
              if(currentBlock !== currentBlock.calculateHash()){
                  return false;
              }
+                 if(currentBlock.previousHash !== previousBlock.hash) {
+                    return false;
+             }
          }
      }
 } 
@@ -50,3 +53,4 @@ DuckCoin.addBlock(new Block(3, "Ducky & Ming-Ming", "4/12/2019", {amount: 2}));
 DuckCoin.addBlock(new Block(4, "Frankie", "6/16/2019", {amount: 1}));
 
 console.log(JSON.stringify(DuckCoin, null, 4));
+console.log('Chain Valid? '+ DuckCoin.isChainValid());
