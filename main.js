@@ -7,7 +7,7 @@ class Block{
         this.previousHash = previousHash;
         this.hash = this.calculateHash();
     }
-calculateHash()
+
 {
     return SHA256(this.index + this.previousHash + this.timestamp + JSON.stringify(this.data)).toString();
 }
@@ -36,4 +36,4 @@ let DuckCoin = new Blockchain();
 DuckCoin.addBlock(new Block(1, "6/25/2019", {amount: 100}));
 console.log(JSON.stringify(DuckCoin, null, 4));
 
-
+calculateHash()
