@@ -19,7 +19,7 @@ class BlockChain {
         this.chain = [this.createGenesisBlock()];
     }
      createGenesisBlock(){
-      return new Block(0, "3/26/2019", "Origin Egg", "0");
+      return new Block(0, "3/27/2019", "Origin Egg", "0");
     }
 
      getLatestBlock(){
@@ -36,13 +36,15 @@ class BlockChain {
              const previousBlock = this.chain[i - 1];
 
              if(currentBlock !== currentBlock.calculateHash()){
+                 console.log('currentBlock broken');
                  return false;
              }
                  if(currentBlock.previousHash !== previousBlock.hash) {
+                     console.log('previousblock broken');
                     return false;
              }
-         }
-         return true;
+        }
+        return true;
      }
 } 
 
@@ -54,4 +56,4 @@ DuckCoin.addBlock(new Block(3, "Ducky & Ming-Ming", "4/12/2019", {amount: 2}));
 DuckCoin.addBlock(new Block(4, "Frankie", "6/16/2019", {amount: 1}));
 
 console.log(JSON.stringify(DuckCoin, null, 4));
-console.log('Is Chain Valid? '+ DuckCoin.isChainValid());
+console.log('Chain Valid? '+ DuckCoin.isChainValid());
