@@ -9,7 +9,7 @@ class Block {
         this.hash = this.calculateHash();
     }
 calculateHash(){
-return SHA256(this.index + this.previousHash + this.timestamp + JSON.stringify(this.data)).toString();
+    return SHA256(this.index + this.previousHash + this.timestamp + JSON.stringify(this.data)).toString();
   }
  
 }
@@ -18,13 +18,12 @@ class BlockChain {
     constructor(){
         this.chain = [this.createGenesisBlock()];
     }
-}
      createGenesisBlock(){
-         return new Block(0, "6/25/2019", "Origin Egg", "0");
-     }
+      return new Block(0, "6/25/2019", "Origin Egg", "0");
+    }
 
      getLatestBlock(){
-       return this.chain{this.chain.length -1};
+       return this.chain[this.chain.length -1];
      }
      addBlock(newBlock){
          newBlock.previousHash = this.getLatestBlock().hash;
