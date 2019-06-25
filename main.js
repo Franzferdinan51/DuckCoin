@@ -37,6 +37,6 @@ let DuckCoin = new BlockChain();
 DuckCoin.addBlock(new Block(1, "Webster & Nestle", "3/27/2019", {amount: 2}));
 DuckCoin.addBlock(new Block(2, "Idea Origin", "4/9/2019", {amount: 1}));
 DuckCoin.addBlock(new Block(3, "Ducky & Ming-Ming", "4/12/2019", {amount: 2}));
-DuckCoin.addBlock(new Block(4, "Frankie" "6/16/2019", {amount: 1}));
+DuckCoin.addBlock(new Block(4, "Frankie", "6/16/2019", {amount: 1}));
 
 console.log(JSON.stringify(DuckCoin, null, 4));
