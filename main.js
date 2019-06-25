@@ -16,6 +16,25 @@ return SHA256(this.index + this.previousHash + this.timestamp + JSON.stringify(t
 
 class BlockChain {
     constructor(){
-        this.chain = []
+        this.chain = [this.createGenesisBlock()];
     }
 }
+     createGenesisBlock(){
+         return new Block(0, "6/25/2019", "Origin Egg", "0");
+     }
+
+     getLatestBlock(){
+       return this.chain{this.chain.length -1};
+     }
+     addBlock(newBlock){
+         newBlock.previousHash = this.getLatestBlock().hash;
+         newBlock.hash = newBlock.calculateHash();
+         this.chain.push(newBlock);
+     }
+} 
+
+
+let DuckCoin = new BlockChain();
+DuckCoin.addBlock(new Block(1, "Webster & Nestle 3/27/2019", {amount: 2}));
+
+console.log(JSON.stringify(DuckCoin, null, 4));
