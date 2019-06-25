@@ -8,7 +8,8 @@ class Block{
         this.hash = this.calculateHash();
     }
 }
-calculateHash(){
+calculateHash()
+{
     return SHA256(this.index + this.previousHash + this.timestamp + JSON.stringify(this.data)).toString();
 }
 class Blockchain {
@@ -17,7 +18,8 @@ class Blockchain {
 
     }
 }
-createGenesisBlock(){
+createGenesisBlock()
+{
     return new Block(0, "6/25/2019", "Genesis block", "0");
 
 }
@@ -32,3 +34,5 @@ this.chain.push(newBlock);
 let DuckCoin = new Blockchain();
 DuckCoin.addBlock(new Block(1, "6/25/2019", {amount: 100}));
 console.log(JSON.stringify(DuckCoin, null, 4));
+
+
