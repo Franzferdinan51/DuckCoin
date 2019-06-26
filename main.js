@@ -7,11 +7,18 @@ class Block {
         this.data = data;
         this.previousHash = previousHash;
         this.hash = this.calculateHash();
+
+        
     }
 calculateHash(){
     return SHA256(this.index + this.previousHash + this.timestamp + JSON.stringify(this.data)).toString();
   }
- 
+ mineBlock(dufficulty){
+     while(this.hash.substring(0, difficulty) !== Array(difficutly + 1).join("0")){
+         this.hash = this.calculateHash();
+     }
+     console.log("Egg Collected " + this.hash + this.Block + i);
+ }
 }
 
 class BlockChain {
@@ -36,7 +43,8 @@ class BlockChain {
              const previousBlock = this.chain[i - 1];
 
         if(currentBlock !== currentBlock.calculateHash()){
-                 console.log('currentBlock broken ' + currentBlock.calculateHash()    ,+[this.chain.length]  , +i.toString());
+                 console.log('currentBlock broken, ' + currentBlock.calculateHash()    ,+[ this.chain.length ]  , +i.toString());
+
                  return false;
              }
                  if(currentBlock.previousHash !== previousBlock.hash) {
