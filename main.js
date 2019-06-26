@@ -38,24 +38,32 @@ class BlockChain {
          newBlock.hash = newBlock.calculateHash();
          this.chain.push(newBlock);
      }
-     isChainValid(){
-         for(let i = 1; i < this.chain.length; i++){
-             const currentBlock = this.chain[i];
-             const previousBlock = this.chain[i - 1];
+isChainValid() {
+    // Check if the Genesis block hasn't been tampered with by comparing
+    // the output of createGenesisBlock with the first block on our chain
+    const realGenesis = JSON.stringify(this.createGenesisBlock());
 
-        if(currentBlock !== currentBlock.calculateHash()){
-                 console.log('currentBlock broken, ' + currentBlock.calculateHash()    ,+[ this.chain.length ]  , +i.toString());
+    if (realGenesis !== JSON.stringify(this.chain[0])) {
+      return false;
+    }
 
-                 return false;
-             }
-                 if(currentBlock.previousHash !== previousBlock.hash) {
-                     console.log('previousblock broken');
-                    return false;
-             }
-        }
-        return true;
-     }
-} 
+    // Check the remaining blocks on the chain to see if there hashes and
+    // signatures are correct
+    for (let i = 1; i < this.chain.length; i++) {
+      const currentBlock = this.chain[i];
+
+      if (!currentBlock.hasValidTransactions()) {
+        return false;
+      }
+
+      if (currentBlock.hash !== currentBlock.calculateHash()) {
+        return false;
+      }
+    }
+
+    return true;
+  }
+}
 
 
 let DuckCoin = new BlockChain();
