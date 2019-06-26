@@ -21,6 +21,16 @@ calculateHash(){
      console.log("Egg Collected " + this.hash + this.Block + i);
  }
 }
+  hasValidTransactions() {
+    for (const tx of this.transactions) {
+      if (!tx.isValid()) {
+        return false;
+      }
+    }
+
+    return true;
+  }
+}
 
 class BlockChain {
     constructor(){
