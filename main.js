@@ -14,21 +14,22 @@ class Block {
 calculateHash(){
     return SHA256(this.index + this.previousHash + this.timestamp + JSON.stringify(this.data) + this.nonce).toString();
   }
- mineBlock(dufficulty){
-     while(this.hash.substring(0, difficulty) !== Array(difficutly + 1).join("0")){
-         this.hash = this.calculateHash();
-     }
-     console.log("Egg Collected " + this.hash + this.Block + i);
- }
-}
-
-hasValidTransactions() {
-    for (const tx of this.transactions) {
-      if (!tx.isValid()) {
-        return false;
-      }
+  mineBlock(difficulty) {
+    while (this.hash.substring(0, difficulty) !== Array(difficulty + 1).join('0')) {
+      this.nonce++;
+      this.hash = this.calculateHash();
     }
 
+    console.log(`Block mined: ${this.hash}`);
+  }
+
+    hasValidTransactions(){
+    for (const tx of this.transactions){
+      if (!tx.isValid()) {
+        return false;
+     
+      }
+    }
     return true;
   }
 }
