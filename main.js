@@ -26,7 +26,7 @@ class BlockChain {
         this.chain = [this.createGenesisBlock()];
     }
      createGenesisBlock(){
-      return new Block(0, "3/27/2019", "Origin Egg", "0");
+      return new Block(0, "6/25/2019", "Origin Egg", "0");
     }
 
      getLatestBlock(){
@@ -58,7 +58,7 @@ class BlockChain {
 
 
 let DuckCoin = new BlockChain();
-DuckCoin.addBlock(new Block(1, "Webster & Nestle", "3/27/2019", {amount: 2}));
+DuckCoin.addBlock(new Block(1, "Webster & Nestle 3/27/2019", {amount: 2}));
 DuckCoin.addBlock(new Block(2, "Idea Origin", "4/9/2019", {amount: 1}));
 DuckCoin.addBlock(new Block(3, "Ducky & Ming-Ming", "4/12/2019", {amount: 2}));
 DuckCoin.addBlock(new Block(4, "Frankie", "6/16/2019", {amount: 1}));
