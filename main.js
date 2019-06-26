@@ -35,7 +35,7 @@ class BlockChain {
              const currentBlock = this.chain[i];
              const previousBlock = this.chain[i - 1];
 
-             if(currentBlock !== currentBlock.calculateHash()){
+        if(currentBlock !== currentBlock.calculateHash()){
                  console.log('currentBlock broken');
                  return false;
              }
