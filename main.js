@@ -6,12 +6,13 @@ class Block {
         this.timestamp = timestamp;
         this.data = data;
         this.previousHash = previousHash;
+        this.nonce = 0;
         this.hash = this.calculateHash();
 
         
     }
 calculateHash(){
-    return SHA256(this.index + this.previousHash + this.timestamp + JSON.stringify(this.data)).toString();
+    return SHA256(this.index + this.previousHash + this.timestamp + JSON.stringify(this.data) + this.nonce.toString());
   }
  mineBlock(dufficulty){
      while(this.hash.substring(0, difficulty) !== Array(difficutly + 1).join("0")){
