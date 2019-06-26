@@ -21,7 +21,8 @@ calculateHash(){
      console.log("Egg Collected " + this.hash + this.Block + i);
  }
 }
-  hasValidTransactions() {
+
+hasValidTransactions() {
     for (const tx of this.transactions) {
       if (!tx.isValid()) {
         return false;
