@@ -37,7 +37,7 @@ calculateHash(){
 class BlockChain {
     constructor(){
         this.chain = [this.createGenesisBlock()];
-        this.difficulty = 5;
+        this.difficulty = 3;
     }
      createGenesisBlock(){
       return new Block(0, "6/25/2019", "Origin Egg", "0");
