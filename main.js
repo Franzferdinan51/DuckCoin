@@ -45,7 +45,7 @@ class Transaction {
     this.signature = sig.toDER('hex');
   }
   
-  class Block {
+class Block {
     constructor(index, timestamp, data, previousHash = ''){
         this.index = index;
         this.transactions = transactions;
