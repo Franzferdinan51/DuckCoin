@@ -1,4 +1,4 @@
-# DuckCoin
+# DuckCoin (QUACK)
 a work in progress by Franzferdinan51 & Bobdabear;
 
 made in JS 
