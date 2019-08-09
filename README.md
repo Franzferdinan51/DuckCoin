@@ -5,4 +5,5 @@ made in JS
 
 start-up
 
+npm install crypto-js
 node main.js
