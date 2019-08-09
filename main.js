@@ -52,8 +52,8 @@ class Transaction {
         this.chain = [this.createGenesisBlock()];
         this.difficulty = 3;
     }
-}// styax error with const 56 and possible error on 57 (unknown fix)
-const createGenesisBlock{
+      // styax error with const 56 and possible error on 57 (unknown fix)
+const createGenesisBlock(){
       return new Block(0, "6/25/2019", "Origin Egg", "0");
     }
 
