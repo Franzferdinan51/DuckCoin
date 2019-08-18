@@ -5,5 +5,6 @@ made in JS
 
 start-up
 
-npm install crypto-js
+npm install crypto-js<br>
+
 node main.js
