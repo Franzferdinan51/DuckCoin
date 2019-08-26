@@ -1,4 +1,4 @@
-# DuckCoin (QUACK)
+# DuckCoin (QUAK)
 a work in progress by Franzferdinan51 & Bobdabear;
   contributions from Michael Hart,
 
