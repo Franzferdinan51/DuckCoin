@@ -105,6 +105,6 @@ console.log('\n Ammount of Eggs in my Basket', DuckCoin.getBalanceOfAddress('rya
 
 
   /*
-Last spot Video 3 Miner Rewards and Transactions
+Stuck Mining~ on startup but no block found
 */
 
