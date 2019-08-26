@@ -5,7 +5,7 @@ made in <h4>JS</h4>
 
 <h3>Dependancies</h3>
 
-nodejs
+nodejs<br>
 crypto-js
 
 <h3>start-up</h3>
