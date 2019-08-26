@@ -1,5 +1,6 @@
 # DuckCoin (QUACK)
 a work in progress by Franzferdinan51 & Bobdabear;
+  contributions from Michael Hart,
 
 made in <h4>JS</h4>
 
