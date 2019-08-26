@@ -24,6 +24,7 @@ class Block {
    *
    * @returns {boolean}
    */
+    }
   isValid() {
     // If the transaction doesn't have a from address we assume it's a
     // mining reward and that it's valid. You could verify this in a
