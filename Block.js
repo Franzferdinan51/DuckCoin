@@ -9,6 +9,24 @@ class Block {
     this.nonce = 0;
     this.hash = this.calculateHash();
   }
+  class Transaction {
+  /**
+   * @param {string} fromAddress
+   * @param {string} toAddress
+   * @param {number} amount
+   */
+  constructor(fromAddress, toAddress, amount) {
+    this.fromAddress = fromAddress;
+    this.toAddress = toAddress;
+    this.amount = amount;
+    this.timestamp = Date.now();
+  }
+
+  /**
+   * Creates a SHA256 hash of the transaction
+   *
+   * @returns {string}
+   */
   calculateHash() {
     return SHA256(
       this.index +
