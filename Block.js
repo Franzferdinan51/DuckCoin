@@ -53,8 +53,9 @@ class Block {
         return false;
       }
     }
-
+  }
     return true;
   }
 }
+
 exports.Block = Block;
