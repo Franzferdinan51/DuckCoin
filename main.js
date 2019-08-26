@@ -26,6 +26,7 @@ class Block{
 class Blockchain{
     constructor(){
         this.chain = [this.createGenesisBlock()];
+        this.difficulty = 2;
     }
     createGenesisBlock(){
         return new Block(0, "6/25/2019", "Origin Egg", "0" )
@@ -35,7 +36,7 @@ return this.chain[this.chain.length -1];
     }
     addBlock(newBlock){
 newBlock.previousHash = this.getLatestBlock().hash;
-newBlock.hash = newBlock.calculateHash();
+newBlock.mineBlock(this.difficulty);
 this.chain.push(newBlock);
     }
     isChainValid(){
