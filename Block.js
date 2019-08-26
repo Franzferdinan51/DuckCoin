@@ -2,7 +2,7 @@ const SHA256 = require("crypto-js/sha256");
 class Block {
   constructor(index, timestamp, data, previousHash = "") {
     this.index = index;
-    this.transactions = Transactions;
+    this.transactions = "transactions";
     this.timestamp = timestamp;
     this.data = data;
     this.previousHash = previousHash;
@@ -27,42 +27,20 @@ class Block {
     }
     console.log(`Block mined: ${this.hash}`);
   }
-  /**
+/**
    * Checks if the signature is valid (transaction has not been tampered with).
    * It uses the fromAddress as the public key.
    *
-   * @returns {boolean}
-   */
+ * @returns {boolean}
+ */
 
-  isValid() {
-    // If the transaction doesn't have a from address we assume it's a
-    // mining reward and that it's valid. You could verify this in a
-    // different way (special field for instance)
-    if (this.fromAddress === null) return true;
+isChainValid() {
+    // Check if the Genesis block hasn't been tampered with by comparing
+    // the output of createGenesisBlock with the first block on our chain
+    const realGenesis = JSON.stringify(this.createGenesisBlock());
 
-    if (!this.signature || this.signature.length === 0) {
-      throw new Error("No signature in this transaction");
-    }
-
-    const publicKey = ec.keyFromPublic(this.fromAddress, "hex");
-    return publicKey.verify(this.calculateHash(), this.signature);
-  }
-
-  /**
-   * Validates all the transactions inside this block (signature + hash) and
-   * returns true if everything checks out. False if the block is invalid.
-   *
-   * @returns {boolean}
-   */
-
-  hasValidTransactions() {
-    for (const tx of this.transactions) {
-      if (!tx.isValid()) {
-        return false;
-      }
-    }
-    return true;
-  }
+    if (realGenesis !== JSON.stringify(this.chain[0])) {
+      return false;
 }
 
 exports.Block = Block;
