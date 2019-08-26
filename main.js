@@ -17,7 +17,7 @@ class Block{
      this.nonce = 0;
  }
  calculateHash(){
-     return SHA256(this.index + this.perviousHash + this.timestamp + JSON.stringify(this.data) + this.nonce).toString();
+     return SHA256(this.perviousHash + this.timestamp + JSON.stringify(this.data) + this.nonce).toString();
 
  }
  mineBlock(difficulty){
@@ -45,7 +45,7 @@ return this.chain[this.chain.length -1];
     }
 
     minePendingTransactions(miningRewardAddress){
-        let block = new Block(Date.now(), this.pendingTransactions, this.getLatestBlock().hash);
+        let block = new Block(Date.now(), this.pendingTransactions);
         block.mineBlock(this.difficulty);
 
         console.log('Found Egg Successfully!');
