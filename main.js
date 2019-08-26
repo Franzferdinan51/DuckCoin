@@ -97,7 +97,7 @@ let DuckCoin = new BlockChain();
 console.log('Grabbing Egg 1...')
 DuckCoin.addBlock(new Block(1, "3/27/2019", "Webster & Nestle", {amount: 2}));
 console.log('Grabbing Egg 2...')
-DuckCoin.addBlock(new Block(2, "4/9/2019","Idea Origin", {amount: 1}));
+DuckCoin.addBlock(new Block(2, "4/9/2019","Idea Origin", {amount: 1});
 console.log('Grabbing Egg 3...')
 DuckCoin.addBlock(new Block(3, "4/12/2019","Ducky & Ming-Ming", {amount: 2}));
 console.log('Grabbing Egg 4...')
