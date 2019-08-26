@@ -45,7 +45,7 @@ return this.chain[this.chain.length -1];
     }
 
     minePendingTransactions(miningRewardAddress){
-        let block = new Block(Date.now(), this.pendingTransactions);
+        let block = new Block(Date.now(), this.pendingTransactions, this.getLatestBlock().hash);
         block.mineBlock(this.difficulty);
 
         console.log('Found Egg Successfully!');
