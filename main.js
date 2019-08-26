@@ -1,10 +1,18 @@
 const SHA256 = require('crypto-js/sha256')
 
+class Transaction2{
+    constructor(fromAddress, toAddress, amount){
+        this.fromAddress = fromAddress;
+        this.toAddress = toAddress;
+        this.amount = amount;0
+    }
+}
+
 class Block{
- constructor(index, timestamp, data, previousHash = ''){
+ constructor(timestamp, transactions, previousHash = ''){
      this.index = index;
      this.timestamp = timestamp;
-     this.data = data;
+     this.transactions = transactions;
      this.previousHash = previousHash;
      this.hash = this.calculateHash();
      this.nonce = 0;
@@ -18,7 +26,7 @@ class Block{
          this.nonce++;
          this.hash = this.calculateHash();
      }
-     console.log("Egg Found: " + this.hash);
+     console.log("Searching for Eggs: " + this.hash);
  }
 }
 
@@ -26,19 +34,48 @@ class Block{
 class Blockchain{
     constructor(){
         this.chain = [this.createGenesisBlock()];
-        this.difficulty = 4;
+        this.difficulty = 3;
+        this.pendingTransactions = [];
+        this.miningReward = 100;
     }
     createGenesisBlock(){
-        return new Block(0, "6/25/2019", "Origin Egg", "0" )
+        return new Block("6/25/2019", "Origin Egg", "0" )
     }
     getLatestBlock(){
 return this.chain[this.chain.length -1];
     }
-    addBlock(newBlock){
-newBlock.previousHash = this.getLatestBlock().hash;
-newBlock.mineBlock(this.difficulty);
-this.chain.push(newBlock);
+
+    minePendingTransactions(miningRewardAddress){
+        let block = new Block(Date.now(), this.pendingTransactions);
+        block.mineBlock(this.difficulty);
+
+        console.log('Found Egg Successfully!');
+        this.chain.push(block);
+
+        this.pendingTransactions = [
+            new Transaction(null, miningRewardAddress, this.miningReward)
+        ];
+        /*needs work*/
     }
+
+createTransaction(transaction){
+  this.pendingTransactions.push(transaction);
+}
+
+getBalanceOfAddress(address){
+    let balance = 0
+    for(const block of this.chain){
+        for(cost trans of block.transactions){
+            if(trans.fromAddress === address){
+                balance-= trans.amount;
+            }
+            if(trans.toAddress === address){
+                balance+=trans.amount;
+            }
+        }
+    }
+    return balance;
+}
     isChainValid(){
         for(let i = 1; i < this.chain.length; i++ ){
             const currentBlock = this.chain[i];
@@ -55,16 +92,20 @@ this.chain.push(newBlock);
 }
 
 let DuckCoin = new Blockchain();
-console.log('Grabbing Egg 1...');
-DuckCoin.addBlock(new Block(1, "3/27/2019", "Webster & Nestle - Khaki Campbell Ducks", { amount:2}));
-console.log('Grabbing Egg 2...');
-DuckCoin.addBlock(new Block(2, "4/09/2019", "Idea Origin", { amount:1}));
-console.log('Grabbing Egg 3...');
-DuckCoin.addBlock(new Block(3, "4/12/2019", "Ducky & Ming-Ming - Pekin Ducks", { amount:2}));
-console.log('Grabbing Egg 4...');
-DuckCoin.addBlock(new Block(4, "6/16/2019", "Frankie - Cayuga Duck", { amount:1}));
+DuckCoin.createTransaction(new transaction('address1', 'address2', 100));
+DuckCoin.createTransaction(new transaction('address2', 'address1', 50));
 
-console.log(JSON.stringify(DuckCoin, null, 4));
-/*
+console.log('\n Starting Egg Search...');
+DuckCoin.minePendingTransactions('ryans-address');
+
+console.log('\n Ammount of Eggs in my Basket', DuckCoin.getBalanceOfAddress('ryans-address'));
+
+
+
+
+
+
+  /*
 Last spot Video 3 Miner Rewards and Transactions
 */
+
