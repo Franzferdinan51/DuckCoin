@@ -65,3 +65,6 @@ console.log('Grabbing Egg 4...');
 DuckCoin.addBlock(new Block(4, "6/16/2019", "Frankie - Cayuga Duck", { amount:1}));
 
 console.log(JSON.stringify(DuckCoin, null, 4));
+/*
+Last spot Video 3 Miner Rewards and Transactions
+*/
