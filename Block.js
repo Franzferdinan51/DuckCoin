@@ -17,14 +17,14 @@ class Block {
             this.nonce++;
             this.hash = this.calculateHash();
         }
-        console.log(`Block mined: ${this.hash}`);
+        console.log(`Block mined: ${this.hash}`);}
           /**
    * Checks if the signature is valid (transaction has not been tampered with).
    * It uses the fromAddress as the public key.
    *
    * @returns {boolean}
    */
-    }
+    
   isValid() {
     // If the transaction doesn't have a from address we assume it's a
     // mining reward and that it's valid. You could verify this in a
@@ -46,7 +46,7 @@ class Block {
   *
    * @returns {boolean}
    */
-    }
+    
   hasValidTransactions() {
     for (const tx of this.transactions) {
       if (!tx.isValid()) {
