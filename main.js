@@ -65,7 +65,7 @@ createTransaction(transaction){
 getBalanceOfAddress(address){
     let balance = 0
     for(const block of this.chain){
-        for(cost trans of block.transactions){
+        for(const trans of block.transactions){
             if(trans.fromAddress === address){
                 balance-= trans.amount;
             }
