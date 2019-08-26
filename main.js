@@ -32,7 +32,9 @@ this.chain.push(newBlock);
 }
 
 let DuckCoin = new Blockchain();
-DuckCoin.addBlock(new Block(1, "3/27/2019", "Webster & Nestle", { amount:2}));
-DuckCoin.addBlock(new Block(1, "4/09/2019", "Idea Origin", { amount:1}));
+DuckCoin.addBlock(new Block(1, "3/27/2019", "Webster & Nestle - Khaki Campbell Ducks", { amount:2}));
+DuckCoin.addBlock(new Block(2, "4/09/2019", "Idea Origin", { amount:1}));
+DuckCoin.addBlock(new Block(3, "4/12/2019", "Ducky & Ming-Ming - Pekin Ducks", { amount:2}));
+DuckCoin.addBlock(new Block(4, "6/16/2019", "Frankie - Cayuga Duck", { amount:1}));
 
 console.log(JSON.stringify(DuckCoin, null, 4));
