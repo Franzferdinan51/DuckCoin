@@ -91,8 +91,8 @@ getBalanceOfAddress(address){
 }
 
 let DuckCoin = new Blockchain();
-DuckCoin.createTransaction(new transaction('address1', 'address2', 100));
-DuckCoin.createTransaction(new transaction('address2', 'address1', 50));
+DuckCoin.createTransaction(new Transaction('address1', 'address2', 100));
+DuckCoin.createTransaction(new Transaction('address2', 'address1', 50));
 
 console.log('\n Starting Egg Search...');
 DuckCoin.minePendingTransactions('ryans-address');
