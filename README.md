@@ -10,6 +10,7 @@ made in <h4>JS</h4>
   Front End<br>
   P2P Nodes & Broadcasting<br>
   Wallets<br>
+  SmartContracts<br>
   ???<br>
  </ul>
 
