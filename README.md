@@ -5,12 +5,12 @@ a work in progress by Franzferdinan51 & Bobdabear;
 made in <h4>JS</h4>
 
 <h1> To-Do List </h1>
-<ul>Transaction & Miner Reward
-  Sign transactions
-  Front End
-  P2P Nodes & Broadcasting
-  Wallets
-  ???
+<ul>Transaction & Miner Reward<br>
+  Sign transactions<br>
+  Front End<br>
+  P2P Nodes & Broadcasting<br>
+  Wallets<br>
+  ???<br>
  </ul>
 
 
