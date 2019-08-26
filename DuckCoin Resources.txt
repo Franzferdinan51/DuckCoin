@@ -1,0 +1,10 @@
+Duck Coin resources
+
+https://medium.com/coinmonks/part-4-implementing-blockchain-and-cryptocurrency-with-pow-consensus-algorithm-9201eb7e8a41
+https://github.com/kashishkhullar
+https://medium.com/coinmonks/part-3-implementing-blockchain-and-cryptocurrency-with-pow-consensus-algorithm-d9b8cb928e3e
+https://www.savjee.be/videos/
+https://www.youtube.com/watch?v=_iIxC8ziZNM
+https://github.com/conradoqg/naivecoin/blob/master/lib/node/index.js
+http://cryptocoinjs.com/
+https://learn.lambdaschool.com/cs/sprint/recAr3gdL8U57eho1
