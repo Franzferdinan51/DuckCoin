@@ -9,7 +9,8 @@ class Block {
     this.nonce = 0;
     this.hash = this.calculateHash();
   }
-   calculateHash() {
+}
+   calculateHash();{
     return SHA256(
       this.index +
         this.previousHash +
@@ -18,7 +19,7 @@ class Block {
         this.nonce
     ).toString();
   }
-  mineBlock(difficulty) {
+  mineBlock(difficulty); {
     while (
       this.hash.substring(0, difficulty) !== Array(difficulty + 1).join("0")
     ) {
@@ -27,20 +28,14 @@ class Block {
     }
     console.log(`Block mined: ${this.hash}`);
   }
-/**
-   * Checks if the signature is valid (transaction has not been tampered with).
-   * It uses the fromAddress as the public key.
-   *
- * @returns {boolean}
- */
-
-isChainValid() {
+isChainValid();{
     // Check if the Genesis block hasn't been tampered with by comparing
     // the output of createGenesisBlock with the first block on our chain
     const realGenesis = JSON.stringify(this.createGenesisBlock());
 
     if (realGenesis !== JSON.stringify(this.chain[0])) {
       return false;
+}
 }
 
 exports.Block = Block;
