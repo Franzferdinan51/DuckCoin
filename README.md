@@ -22,6 +22,10 @@ crypto-js
 
 <h3>start-up</h3>
 
-npm install crypto-js<br>
+<h4>Ubuntu 18.04 LTS</h4><br>
+
+sudo apt-get install nodejs<br>
+
+npm install<br>
 
 node main.js
