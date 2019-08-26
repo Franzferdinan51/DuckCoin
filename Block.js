@@ -10,7 +10,7 @@ class Block {
     this.hash = this.calculateHash();
   }
 }
-   calculateHash();{
+class calculateHash();{
     return SHA256(
       this.index +
         this.previousHash +
