@@ -18,14 +18,20 @@ class Block {
             this.hash = this.calculateHash();
         }
         console.log(`Block mined: ${this.hash}`);
+ /**
+   * Validates all the transactions inside this block (signature + hash) and
+   * returns true if everything checks out. False if the block is invalid.
+   *
+   * @returns {boolean}
+   */
+  hasValidTransactions() {
+    for (const tx of this.transactions) {
+      if (!tx.isValid()) {
+        return false;
+      }
     }
-    hasValidTransactions() {
-        for (const tx of this.transactions) {
-            if (!tx.isValid()) {
-                return false;
-            }
-        }
-        return true;
-    }
+
+    return true;
+  }
 }
 exports.Block = Block;
