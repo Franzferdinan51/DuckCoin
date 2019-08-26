@@ -1,0 +1,24 @@
+{
+  "name": "duckcoin",
+  "version": "1.0.0",
+  "description": "a work in progress by Franzferdinan51 & Bobdabear;",
+  "main": "main.js",
+  "dependencies": {
+    "crypto-js": "^3.1.9-1",
+    "eslint": "^6.2.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Franzferdinan51/DuckCoin.git"
+  },
+  "author": "Franzferdinan51 & Bobdabear",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Franzferdinan51/DuckCoin/issues"
+  },
+  "homepage": "https://github.com/Franzferdinan51/DuckCoin#readme"
+}
