@@ -1,4 +1,3 @@
-const SHA256 = require("crypto-js/sha256");
 class Block {
   constructor(index, timestamp, data, previousHash = "") {
     this.index = index;
@@ -10,7 +9,7 @@ class Block {
     this.hash = this.calculateHash();
   }
 }
-class calculateHash();{
+calculateHash();{
     return SHA256(
       this.index +
         this.previousHash +
@@ -19,14 +18,15 @@ class calculateHash();{
         this.nonce
     ).toString();
   }
-  mineBlock(difficulty); {
+
+mineBlock(difficulty);{
     while (
       this.hash.substring(0, difficulty) !== Array(difficulty + 1).join("0")
     ) {
       this.nonce++;
       this.hash = this.calculateHash();
     }
-    console.log(`Block mined: ${this.hash}`);
+  console.log(`Block mined: ${this.hash}`);
   }
 isChainValid();{
     // Check if the Genesis block hasn't been tampered with by comparing
