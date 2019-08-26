@@ -10,7 +10,6 @@ class Transaction2{
 
 class Block{
  constructor(timestamp, transactions, previousHash = ''){
-     this.index = index;
      this.timestamp = timestamp;
      this.transactions = transactions;
      this.previousHash = previousHash;
