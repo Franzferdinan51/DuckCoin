@@ -1,14 +1,14 @@
 # DuckCoin (QUACK)
 a work in progress by Franzferdinan51 & Bobdabear;
 
-made in <h1>JS</h1>
+made in <h4>JS</h4>
 
-<h2>Dependancies</h2>
+<h3>Dependancies</h3>
 
 nodejs
 crypto-js
 
-start-up
+<h3>start-up</h3>
 
 npm install crypto-js<br>
 
