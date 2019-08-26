@@ -21,9 +21,10 @@ class Block {
  /**
    * Validates all the transactions inside this block (signature + hash) and
    * returns true if everything checks out. False if the block is invalid.
-   *
+  *
    * @returns {boolean}
    */
+    }
   hasValidTransactions() {
     for (const tx of this.transactions) {
       if (!tx.isValid()) {
