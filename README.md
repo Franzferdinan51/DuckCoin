@@ -5,7 +5,7 @@ a work in progress by Franzferdinan51 & Bobdabear;
 made in <h4>JS</h4>
 
 <h1> To-Do List </h1>
-<ul>Transaction & Miner Reward - Stuck Searching for Egg<br>
+<ul>Transaction & Miner Reward - finished
   Sign transactions<br>
   Front End<br>
   P2P Nodes & Broadcasting<br>
